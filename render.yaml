@@ -1,0 +1,32 @@
+# Render 部署配置（Blueprint）
+#
+# 用法：把仓库连到 Render → New Blueprint → 选择本仓库，会自动读取此文件。
+#
+# 关于「数据会不会丢」：
+#   Render 的免费实例没有持久化磁盘，重新部署或休眠唤醒后 /var/data 会重置。
+#   下面默认用免费方案（配 SMARTNOTES_DATA_DIR 到临时目录），适合演示；
+#   要长期保存用户数据，把 plan 改成 starter 并取消 disk 段的注释。
+#
+# 上线后把 Render 分配的地址（https://<name>.onrender.com）编进 APK：
+#   ./gradlew :app:assembleDebug -Psmartnotes.server=https://<name>.onrender.com
+services:
+  - type: web
+    name: smartnotes-cloud
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: server
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22.11.0"
+      - key: SMARTNOTES_DATA_DIR
+        value: /tmp/smartnotes
+
+    # 要持久化数据时：把上面的 plan 改成 starter，并取消下面注释
+    # disk:
+    #   name: smartnotes-data
+    #   mountPath: /var/data
+    #   sizeGB: 1

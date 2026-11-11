@@ -18,8 +18,17 @@ const { DatabaseSync } = require('node:sqlite');
 
 const PORT = Number(process.env.PORT || process.argv[2] || 8787);
 const ROOT = __dirname;
-const DATA_DIR = path.join(ROOT, 'data');
-const UPLOAD_DIR = path.join(ROOT, 'uploads');
+
+/**
+ * 数据目录。
+ *
+ * 云平台的持久化磁盘通常挂在代码目录之外（如 Render 的 /var/data、Fly 的 /data），
+ * 用 SMARTNOTES_DATA_DIR 指过去，避免每次重新部署把用户数据一起清掉。
+ * 不设置时仍落在项目内的 ./data，本地开发无需任何配置。
+ */
+const DATA_ROOT = process.env.SMARTNOTES_DATA_DIR || ROOT;
+const DATA_DIR = path.join(DATA_ROOT, 'data');
+const UPLOAD_DIR = path.join(DATA_ROOT, 'uploads');
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 

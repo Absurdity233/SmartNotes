@@ -1,0 +1,14 @@
+{
+  "name": "smartnotes-cloud",
+  "version": "1.0.0",
+  "description": "智趣笔记云服务 - 零依赖 Node.js (HTTP + node:sqlite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,14 @@
+node_modules/
+npm-debug.log*
+data/
+uploads/
+run.log
+run.err
+.git/
+.gitignore
+tools/
+app/
+Dockerfile
+.dockerignore
+README.md
+DEMO.md
