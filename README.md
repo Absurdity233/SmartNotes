@@ -76,7 +76,24 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
 - `minSdk 26`，`targetSdk 36`，Kotlin 2.1 / Compose BOM 2025.09
-- 构建需要 JDK 17+（本机已在 `gradle.properties` 固定为 JDK 21，Gradle 8.14）
+- 构建需要 JDK 17+（推荐 21）
+
+#### 从 GitHub 克隆后必做
+
+`local.properties` 与 JDK 路径都因机器而异，**不在版本库中**，克隆后需自行配置：
+
+```bash
+# 1) 指定 Android SDK 位置
+echo "sdk.dir=/path/to/Android/Sdk" > local.properties
+#    Windows 示例：sdk.dir=C:/Users/<你>/AppData/Local/Android/Sdk
+
+# 2) 若默认 JDK 与 Gradle 不兼容（如 JDK 25 + Gradle 8.14），
+#    在全局配置里指定 JDK 21，避免污染项目文件：
+#    ~/.gradle/gradle.properties 追加一行：
+#    org.gradle.java.home=/path/to/jdk21
+```
+
+Android Studio 打开项目时会自动生成 `local.properties`，通常无需手动创建。
 
 ### 3. 连接云服务
 
