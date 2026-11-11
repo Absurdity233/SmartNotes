@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标前景：圆角便签 + 折角 + 三行内容 + 橙色输入光标。
+  所有图形都落在 66dp 安全圆内，圆形 / 圆角 / 方形遮罩下均不会被裁切。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 柔和投影（右下偏移，营造纸片浮起感） -->
+    <path
+        android:pathData="M42,34 H65 L77,46 V73 A7,7 0 0 1 70,80 H42 A7,7 0 0 1 35,73 V41 A7,7 0 0 1 42,34 Z"
+        android:fillColor="#2A000000" />
+
+    <!-- 便签主体（右上折角） -->
+    <path android:pathData="M40,31 H63 L75,43 V70 A7,7 0 0 1 68,77 H40 A7,7 0 0 1 33,70 V38 A7,7 0 0 1 40,31 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="33"
+                android:startY="31"
+                android:endX="75"
+                android:endY="77"
+                android:startColor="#FFFFFF"
+                android:endColor="#EFEBFF" />
+        </aapt:attr>
+    </path>
+
+    <!-- 折角（折叠后露出的背面） -->
+    <path
+        android:pathData="M63,31 L75,43 H66 A3,3 0 0 1 63,40 Z"
+        android:fillColor="#D3CAFF" />
+
+    <!-- 内容线条 -->
+    <path
+        android:pathData="M42,49 H64"
+        android:strokeColor="#6C5CE7"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M42,59 H66"
+        android:strokeColor="#B4A9F5"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M42,69 H55"
+        android:strokeColor="#C9C0FA"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round" />
+
+    <!-- 正在输入的光标 -->
+    <path
+        android:pathData="M61,64.5 V73.5"
+        android:strokeColor="#FFB86B"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+</vector>

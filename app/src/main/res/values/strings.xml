@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">智趣笔记</string>
+    <string name="notif_channel_reminder">笔记提醒</string>
+</resources>

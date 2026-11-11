@@ -1,0 +1,29 @@
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild
+.cxx
+server/data/
+server/uploads/
+*.png
+ui.xml
+ui.txt
+
+# Kotlin 编译缓存
+.kotlin/
+
+# 公网隧道二进制（55MB，不入库；用 run-public.bat / start.bat 首次下载）
+tools/bin/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 本地临时数据库与截图
+tools/*.db
+tools/*.db-wal
+tools/*.db-shm

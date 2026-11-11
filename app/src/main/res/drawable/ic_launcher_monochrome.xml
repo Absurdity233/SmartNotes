@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  单色图标（Android 13+ 主题图标）：只用描边构成剪影，
+  系统会按壁纸配色整体染色，因此在深浅背景下都保持清晰。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 便签外轮廓 + 折角 -->
+    <path
+        android:pathData="M40,31 H63 L75,43 V70 A7,7 0 0 1 68,77 H40 A7,7 0 0 1 33,70 V38 A7,7 0 0 1 40,31 Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineJoin="round" />
+
+    <!-- 折角内折痕 -->
+    <path
+        android:pathData="M63,31 V36 A7,7 0 0 0 70,43 H75"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- 内容线条 -->
+    <path
+        android:pathData="M42,50 H64"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M42,60 H66"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M42,70 H56"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="4.5"
+        android:strokeLineCap="round" />
+</vector>

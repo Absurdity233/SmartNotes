@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标背景：品牌紫渐变 + 左上角柔光，
+  让图标在深色/浅色桌面上都保持层次。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="0"
+                android:endX="108"
+                android:endY="108"
+                android:startColor="#8E7DFF"
+                android:centerColor="#6C5CE7"
+                android:endColor="#4634B8" />
+        </aapt:attr>
+    </path>
+
+    <!-- 左上角柔光 -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="26"
+                android:centerY="18"
+                android:gradientRadius="78"
+                android:startColor="#45FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </aapt:attr>
+    </path>
+
+    <!-- 右下角暖色反光，与品牌橙呼应 -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="96"
+                android:centerY="100"
+                android:gradientRadius="62"
+                android:startColor="#33FFB86B"
+                android:endColor="#00FFB86B" />
+        </aapt:attr>
+    </path>
+</vector>
