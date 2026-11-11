@@ -21,7 +21,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 # 5. 清理测试账号，让「搜索用户」列表干净
 node tools/cleanup-test-users.cjs --dry-run   # 先看要删什么
-node tools/cleanup-test-users.cjs             # 真正执行（保留 demo / alice）
+node tools/cleanup-test-users.cjs             # 真正执行（保留 absurdity / alice）
 ```
 
 > 第 5 步很重要：开发过程中跑端到端测试会生成 `owner_xxx`、`collab_xxx` 之类的账号。
@@ -111,7 +111,7 @@ node tools/cleanup-test-users.cjs             # 真正执行（保留 demo / ali
 ### 3.3 多用户 —— 对应评分项 6（+50）
 
 1. 【我的】→ **退出登录**
-2. 登录 `demo / demo123`
+2. 登录 `absurdity / absurdity123`
    > 「不同账号的数据完全隔离。」
 3. 展示笔记列表变化
 
@@ -119,14 +119,14 @@ node tools/cleanup-test-users.cjs             # 真正执行（保留 demo / ali
 
 > 「重点演示这个：**两个账号操作同一条笔记**。」
 
-1. 用 `demo` 登录，打开 **「十一月的第一场雨」**
+1. 用 `absurdity` 登录，打开 **「十一月的第一场雨」**
 2. 点右上角 **分享图标** → 输入 `alice` → 选「可编辑」→ 确认
    > 「已经分享给小艾了。」
 3. 【我的】→ 退出 → 登录 `alice / alice123`
-4. 首页找到 **「来自 演示用户」** 的笔记
+4. 首页找到 **「来自 Absurdity」** 的笔记
    > 「注意这里标记了来源。」
 5. 打开它，**勾选清单项** / **发表评论**
-6. 切回 `demo`，等待约 20 秒
+6. 切回 `absurdity`，等待约 20 秒
    > 「不需要手动点同步——应用在前台每 20 秒自动拉取一次，
    >  alice 的改动会自动出现在我这里。」
 
@@ -214,8 +214,8 @@ curl https://<地址>.trycloudflare.com/api/health
 - [ ] `start.bat` 在跑
 - [ ] 浏览器能打开 `http://127.0.0.1:8787`
 - [ ] `adb devices` 有设备
-- [ ] App 已登录 `demo`
-- [ ] 已执行 `node tools/cleanup-test-users.cjs`（只留 demo / alice）
+- [ ] App 已登录 `absurdity`
+- [ ] 已执行 `node tools/cleanup-test-users.cjs`（只留 absurdity / alice）
 - [ ] 「十一月的第一场雨」已分享给 `alice`（**演示前已配好，无需重做**）
 - [ ] 手机/模拟器电量 > 50%
 - [ ] 屏幕录制已开启（备用证据）
@@ -224,13 +224,13 @@ curl https://<地址>.trycloudflare.com/api/health
 
 | 账号 | 密码 | 笔记数 |
 | --- | --- | --- |
-| `demo` | `demo123` | 5 条（含「十一月的第一场雨」「期末项目冲刺清单」） |
+| `absurdity` | `absurdity123` | 5 条（含「十一月的第一场雨」「期末项目冲刺清单」） |
 | `alice` | `alice123` | 5 条 |
 
 已存在的分享关系（演示时可直接用，不必现场分享）：
 
-- 「十一月的第一场雨」 demo → alice（可编辑）
-- 「期末项目冲刺清单」 demo → alice（可编辑）
+- 「十一月的第一场雨」 absurdity → alice（可编辑）
+- 「期末项目冲刺清单」 absurdity → alice（可编辑）
 
 alice 已在「十一月的第一场雨」留下评论 `Looks great`，可以直接演示「协作痕迹」。
 

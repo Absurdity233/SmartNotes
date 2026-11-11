@@ -619,7 +619,7 @@ const server = http.createServer(async (req, res) => {
 function seed() {
   const count = db.prepare('SELECT COUNT(*) AS c FROM users').get().c;
   if (count > 0) return;
-  const demo = makeUser('demo', '演示用户', 'demo123');
+  const owner = makeUser('absurdity', 'Absurdity', 'absurdity123');
   const alice = makeUser('alice', '小艾', 'alice123');
   const t = now();
 
@@ -669,13 +669,13 @@ function seed() {
     const values = noteValues({ ...s, createdAt: t - 86_400_000, updatedAt: t - 3_600_000 });
     db.prepare(
       `INSERT INTO notes(id, owner_id, ${NOTE_FIELDS.join(', ')}, seq) VALUES (?,?,${NOTE_FIELDS.map(() => '?').join(',')},?)`
-    ).run(id, demo.id, ...values, seq);
+    ).run(id, owner.id, ...values, seq);
     if (s.type === 'CHECKLIST') {
       db.prepare('INSERT INTO shares(note_id, user_id, permission, created_at) VALUES (?,?,?,?)')
         .run(id, alice.id, 'edit', now());
     }
   }
-  console.log('[seed] 演示账号：demo / demo123，alice / alice123');
+  console.log('[seed] 演示账号：absurdity / absurdity123，alice / alice123');
 }
 
 seed();

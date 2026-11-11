@@ -34,7 +34,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 | 账号 | 密码 |
 | --- | --- |
-| `demo` | `demo123` |
+| `absurdity` | `absurdity123` |
 | `alice` | `alice123` |
 
 App 默认连模拟器宿主机 `http://10.0.2.2:8787`，模拟器上无需任何配置。用真机的话，在「我的 → 云服务地址」改成电脑的局域网 IP。
@@ -138,7 +138,7 @@ node tools/e2e-server-test.mjs http://127.0.0.1:8787
 node tools/db-inspect.cjs <db>        # 看本地库的笔记类型、分区、密码哈希
 node tools/migration-check.cjs <db>   # 迁移后的版本号、索引、数据条数
 node tools/searchblob-check.cjs <db>  # searchBlob 回填质量
-node tools/cleanup-test-users.cjs     # 清掉测试账号，只留 demo / alice
+node tools/cleanup-test-users.cjs     # 清掉测试账号，只留 absurdity / alice
 ```
 
 ## 已知问题

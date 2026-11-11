@@ -267,7 +267,7 @@ fun AuthScreen(
 
             Spacer(Modifier.height(8.dp))
             Text(
-                "演示账号：demo / demo123 · alice / alice123\n" +
+                "演示账号：absurdity / absurdity123 · alice / alice123\n" +
                     "提示：云服务需先在电脑上运行 server/server.js",
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.75f),

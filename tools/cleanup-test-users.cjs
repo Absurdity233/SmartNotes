@@ -1,10 +1,10 @@
-// 清理压测/端到端测试产生的临时账号，只保留演示用的 demo 与 alice
+// 清理压测/端到端测试产生的临时账号，只保留演示用的 absurdity 与 alice
 // 用法：node tools/cleanup-test-users.cjs [--dry-run]
 const { DatabaseSync } = require('node:sqlite');
 const db = new DatabaseSync('server/data/smartnotes.db');
 const dryRun = process.argv.includes('--dry-run');
 
-const KEEP = new Set(['demo', 'alice']);
+const KEEP = new Set(['absurdity', 'alice']);
 // 测试脚本生成的账号命名：owner_xxx / collab_xxx / out_xxx / bob_test / carol_test
 const isTestUser = (u) => /^(owner|collab|out)_[a-z0-9]{5,}$/.test(u) || /_test$/.test(u);
 
